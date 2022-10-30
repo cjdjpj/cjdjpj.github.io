@@ -2464,14 +2464,10 @@ input[type="button"].btn-block {
   background-color: #eee;
   height: 700px;
   background: -webkit-linear-gradient(
-      rgba(52, 73, 94, 0.8),
-      rgba(52, 73, 94, 0.8)
+      rgb(17,20,28),
+      rgb(17,20,28)
     ),
-    url(http://timothy.expert/codepen-resources/computer.jpg) no-repeat center
-      center fixed;
-  background: linear-gradient(rgba(52, 73, 94, 0.8), rgba(52, 73, 94, 0.8)),
-    url(http://timothy.expert/codepen-resources/computer.jpg) no-repeat center
-      center fixed;
+  background: linear-gradient(rgb(17,20,28), rgb(17,20,28)),
   background-size: cover;
   text-transform: capitalize;
 }

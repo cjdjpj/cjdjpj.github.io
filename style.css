@@ -1,15 +1,15 @@
 :root {
-    --color-bg: #1E2021;
+    --color-bg: #282828;
     --color-fg: #f7eac6;
     --color-link: #c9c9c9;
     --color-link-visited: #c9c9c9;
     --color-link-hover: #8ad1cf ;
 }
 
-html, body {
+html, body, .search-form {
   background: var(--color-bg);
   color: var(--color-fg);
-  font-family: "Inconsolata", monospace;
+  font-family: "Source Code Pro";
   height: 100%;
   width: 100%;
   margin: 0;

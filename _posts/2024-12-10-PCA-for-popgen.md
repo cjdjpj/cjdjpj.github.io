@@ -14,7 +14,7 @@ One big problem, however, is dealing with the high dimensional nature of genomic
 
 This is where dimensionality reduction techniques come in, the most popular of which for genomics is a Principle Component Analysis (PCA).  Using PCA, we can infer simple relationships in high dimensional data by compressing it into two/three dimensions. By doing so, it is often (but not always) easier to see the relationships between observations. An example of the result of a PCA can be seen in Nelis et al. 2009 where a PCA was done for European human populations.
 
-![PCA example](/images/pca_example.png)
+![PCA example](/images/pca_example.png){: .flex-image }
 
 From this PCA, it seems that Finnish people are uniquely diverged from the rest of European populations.  
 

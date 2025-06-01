@@ -1,2 +1,5 @@
 markdown: kramdown
-google_analytics: "G-JC7JSVCPL0"
+
+jekyll_analytics:
+  GoogleAnalytics:
+    id: G-JC7JSVCPL0

@@ -1,8 +1,5 @@
 markdown: kramdown
 
-plugins:
-  - jekyll-analytics
+google_analytics:
+  id: "G-JC7JSVCPL0"
 
-jekyll_analytics:
-  GoogleAnalytics:
-    id: G-JC7JSVCPL0

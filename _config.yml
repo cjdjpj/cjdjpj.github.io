@@ -1,8 +1,1 @@
 markdown: kramdown
-
-analytics:
-  provider: "google-gtag"
-  google:
-    tracking_id: "G-JC7JSVCPL0"
-
-

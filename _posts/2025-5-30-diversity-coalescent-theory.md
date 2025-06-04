@@ -44,13 +44,13 @@ Under the infinite-alleles model, each new mutation creates a new allele. The pr
 From this, the probability that two alleles coalesced $$t$$ generations ago and are still identical is
 
 $$
-\mathbb{P}(\text{coal. in } t\ \& \text{ no mut}) = (1-\mu)^{2t}(\frac{1}{N})(1-\frac{1}{N})^{t-1}
+\mathbb{P}(\text{coal. in } t,  \text{no mut}) = (1-\mu)^{2t}\frac{1}{N}(1-\frac{1}{N})^{t-1}
 $$
 
 We can extend this to calculate the probability that two alleles coalesced at all before they mutated
 
 $$
-\mathbb{P}(\text{coal. before mut}) = \sum_{t=0}^\infty \mathbb{P}(\text{coal. in } t\ \& \text{ no mut})
+\mathbb{P}(\text{coal. before mut}) = \sum_{t=0}^\infty \mathbb{P}(\text{coal. in } t, \text{no mut})
 $$
 
 From here we make some reasonable assumptions to allow for simplification:
@@ -62,7 +62,9 @@ This allows us to simplify to:
 
 $$
 \begin{align*}
-\mathbb{P}(\text{coal. before mut}) &= \sum_{t=0}^\infty \frac{1}{N}e^{-2t\mu}e^{-\frac{t}{N}} = \sum_{t=0}^\infty \frac{1}{N}e^{-t(2\mu + \frac{1}{N})} \approx \frac{1}{N}\int^\infty_0 e^{-t(2\mu + \frac{1}{N})}\\
+\mathbb{P}(\text{coal. before mut}) &= \sum_{t=0}^\infty \frac{1}{N}e^{-2t\mu}e^{-\frac{t}{N}} \\
+&= \sum_{t=0}^\infty \frac{1}{N}e^{-t(2\mu + \frac{1}{N})} \\
+&\approx \frac{1}{N}\int^\infty_0 e^{-t(2\mu + \frac{1}{N})}\\
 &= \frac{\frac{1}{N}}{\frac{1}{N} + 2\mu}\\
 &= \frac{1}{1+2N\mu}
 \end{align*}

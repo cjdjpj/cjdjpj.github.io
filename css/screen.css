@@ -177,6 +177,15 @@ ul.posts span {
     font-size: 1em;
 }
 
+#post 
+hr {
+  margin-top: 2rem;   /* space above */
+  margin-bottom: 2rem; /* space below */
+  border: none;       /* optional: remove default border */
+  border-top: 2px solid #ccc; /* optional: custom style */
+}
+
+
 /*****************************************************************************/
 /* Mobile Responsiveness */
 /*****************************************************************************/

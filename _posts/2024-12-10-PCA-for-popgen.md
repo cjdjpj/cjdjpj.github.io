@@ -115,7 +115,7 @@ Now each point $$z_i$$ can be plot on a Cartesian plane, and we have completed a
 
 **Note**: A PCA is not a magic wand that let's us see into higher dimensions! It relies on the fact that a supposedly high dimensional data is not actually high dimensional, but really just 2 or 3 dimensional with some "noise" in other dimensions that we hope is not important.
 
-We can evaluate the dimensionality of our data by looking at the eigenvalues, which each describes the variance explained by each basis vector. If they are uniform in value, then the data is spread across many dimensions and a PCA would be fairly useless. If 1 or 2 eigenvalues add up to more than 0.5, then a PCA may be a good choice.
+We can evaluate the dimensionality of our data by looking at the eigenvalues, which each describes the variance explained by each basis vector. If they are uniform in value, then the data is spread across many dimensions and a PCA would be fairly useless. This would be the case if a population was panmictic (and in the case of bacteria, exchanges DNA frequently), for example. If 1 or 2 eigenvalues add up to more than 0.5, then a PCA may be a good choice.
 
 **Note 2**: It is crucial that spectral decomposition gives us **orthogonal** vectors. Not only does this allow us to plot our new points in a Cartesian plane, but the highest variance principle components would be quite pointless if they were not orthogonal, since each axes would basically be the same.
 

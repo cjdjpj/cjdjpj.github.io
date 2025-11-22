@@ -4,4 +4,4 @@ title: about
 permalink: /about/
 ---
 
-BLAHHH
+Human interested in population genetics and evolutionary theory.

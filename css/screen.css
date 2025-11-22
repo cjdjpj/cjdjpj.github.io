@@ -76,7 +76,7 @@ ul.posts span {
     margin: 0 auto;
     font-size: 1.1em;
     line-height: 1.5em;
-    text-align: justify;
+    text-align: left;
     width: 100%;
     padding-left: 1em;
     padding-right: 1em;
@@ -185,6 +185,15 @@ hr {
     border-top: 2px solid #ccc; /* optional: custom style */
 }
 
+/*****************************************************************************/
+/* About */
+/*****************************************************************************/
+.right-image {
+    float: right;
+    margin: 0 0 1em 1em;
+    max-width: 250px;
+    align: "right";
+}
 
 /*****************************************************************************/
 /* Mobile Responsiveness */

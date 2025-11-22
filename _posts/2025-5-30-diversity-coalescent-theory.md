@@ -18,7 +18,7 @@ Two alleles [**coalesce**](https://en.wikipedia.org/wiki/Coalescent_theory) when
     - Without mutation, the alleles must be identical - meaning $$H = 0$$.
 
 2. They did not coalesce in the previous generation. This occurs with probability $$1-\frac{1}{N}$$, by the complement rule.
-	- Without mutation, the alleles are only different if the parents were different, which means $$H=H_{t-1}$$ (since the probability two parents are different is by definition $$H_{t-1}$$).
+    - Without mutation, the alleles are only different if the parents were different, which means $$H=H_{t-1}$$ (since the probability two parents are different is by definition $$H_{t-1}$$).
 
 Therefore,
 

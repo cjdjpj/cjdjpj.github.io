@@ -45,9 +45,9 @@ blockquote {
     background-color: #f9f9f9;
 }
 .flex-image {
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain; /* or cover, depending on your goal */
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain; /* or cover, depending on your goal */
 }
 /*****************************************************************************/
 /* Home */
@@ -179,10 +179,10 @@ ul.posts span {
 
 #post 
 hr {
-  margin-top: 2rem;   /* space above */
-  margin-bottom: 2rem; /* space below */
-  border: none;       /* optional: remove default border */
-  border-top: 2px solid #ccc; /* optional: custom style */
+    margin-top: 2rem;   /* space above */
+    margin-bottom: 2rem; /* space below */
+    border: none;       /* optional: remove default border */
+    border-top: 2px solid #ccc; /* optional: custom style */
 }
 
 
@@ -193,7 +193,7 @@ hr {
     html {
         font-size: 1em; /* Reduce from 1.1em */
     }
-    
+
     .site {
         font-size: 1em;
         padding-left: 0.8em;

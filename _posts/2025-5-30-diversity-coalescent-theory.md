@@ -6,7 +6,7 @@ title: How much diversity is maintained in a neutral population?
 {{ page.title }}
 ================
 
-> Motivating question: under the neutral Wright-Fischer, a population loses diversity over time due to drift, but at what rate?
+> Motivating question: under the neutral Wright-Fisher, a population loses diversity over time due to drift, but at what rate?
 
 We will look at $$H$$, which stands for heterozygosity. Heterozygosity is usually an exclusively diploid concept. However, here $$H$$ refers simply to the probability two random alleles (at a single locus) are different in a population. Rather than referring to when an individual carries two different alleles via separate chromosomes, here it is a measure of "allelic diversity" that works for haploids as well. In the haploid case, it is akin to looking at $$\pi$$ for a single locus.
 
@@ -103,11 +103,11 @@ $$
 E(\pi) = 2t\mu = 2\mathbb{E}(T_2)\mu = 2N\mu
 $$
 
-This result is surprisingly simple - it means that a population under Wright-Fischer assumptions with a mutation rate of $$\mu$$ and a population size of $$N$$ would have an average $$\pi$$ of around $$2N\mu$$. 
+This result is surprisingly simple - it means that a population under Wright-Fisher assumptions with a mutation rate of $$\mu$$ and a population size of $$N$$ would have an average $$\pi$$ of around $$2N\mu$$. 
 
 When mutation is rare and $$\theta \ll 1$$, $$H_e \approx E(\pi)$$. We can see why by looking at the similar but subtle differences in their definitions. $$H_e$$ is the probability that two random alleles are different. $$\pi$$ is the expected number of differences between two samples. Because mutation is rare, it is unlikely for two samples to have more than one mutation. Each sample's genome is effectively an "allele" that becomes different after one mutation and the two quantities measure the same thing. If mutation is common however, this approximation no longer works.
 
-We find that $$E(\pi) = \theta$$. In other words, by getting the hamming distance between individuals in a population and taking the average, we can get an empirical estimate of the population scaled mutation rate. This is very useful! It means that if we know we can assume the Wright-Fischer about a population, we can infer its mutation rate from its diversity. On the other hand, if we know the mutation rate, we can check if a population is deviating from Wright-Fischer assumptions by measuring its diversity. Indeed, another statistic - Tajima's D - tests if a population is evolving neutrally by comparing $$\pi$$ with $$\theta_w$$.
+We find that $$E(\pi) = \theta$$. In other words, by getting the hamming distance between individuals in a population and taking the average, we can get an empirical estimate of the population scaled mutation rate. This is very useful! It means that if we know we can assume the Wright-Fisher about a population, we can infer its mutation rate from its diversity. On the other hand, if we know the mutation rate, we can check if a population is deviating from Wright-Fischer assumptions by measuring its diversity. Indeed, another statistic - Tajima's D - tests if a population is evolving neutrally by comparing $$\pi$$ with $$\theta_w$$.
 
 ---
 

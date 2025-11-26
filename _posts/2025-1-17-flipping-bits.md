@@ -6,6 +6,8 @@ title: Flipping bits
 {{ page.title }}
 ================
 
+<p class="meta">17 January 2025</p>
+
 > Consider an array of $$L$$ binary values all initially set as False.
 > We want to flip them all to True by doing a $$T$$-block flip, where $$T$$ consecutive values are flipped to be True (already True values stay True). 
 > What is the expected number of $$T$$-block flips until the entire array is True (assuming the position of each $$T$$-block flip is chosen randomly with equal probability for each site)?

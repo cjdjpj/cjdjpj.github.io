@@ -64,7 +64,7 @@ This machine is
 
 $$K(xx) = |\langle M \rangle| +  |d(x)| = K(x) + c$$
 
-In fact, in general, any computable function of $$x$$ can be computed by a constant length machine, and so the Kolmogorov complexity of any computable function of a string is $$|x| + c$$
+In fact, in general, any computable function of $$x$$ can be computed by a constant length machine, and so the Kolmogorov complexity of any computable function of a string is $$\lvert x\rvert + c$$
 
 **4\.** $$K(xy) \leq 2K(x) + K(y) + c$$
 

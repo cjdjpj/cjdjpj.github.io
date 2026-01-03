@@ -1,6 +1,6 @@
 ---
 layout: default
-title: C.J. Jiang
+title: CJ Jiang
 permalink: /posts/
 ---
 

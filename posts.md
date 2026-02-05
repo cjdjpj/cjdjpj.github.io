@@ -12,9 +12,9 @@ permalink: /posts/
         {% endfor %}
     </ul>
 
-    <h1>Publications</h1>
-    <ul class="posts">
-      <li></li>
-    </ul>
+    <!-- <h1>Publications</h1> -->
+    <!-- <ul class="posts"> -->
+    <!--   <li></li> -->
+    <!-- </ul> -->
 </div>
 

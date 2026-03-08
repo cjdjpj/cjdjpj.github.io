@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Kolmogorov complexity
+title: What is the minimal representation of data?
 ---
 
 {{ page.title }}
@@ -8,34 +8,38 @@ title: Kolmogorov complexity
 
 <p class="meta">{{ page.date | date: "%d %B %Y" }}</p>
 
-> What is the most minimal representation of any piece of data?
-
 Many compression schemes work by finding patterns in the data which can be more concisely represented.
-For example, if an image has a large block of same colored pixels, rather than storing all the pixels individually, it would be more efficient to store that color and specify the shape of this block.
+For example, if an image has a large block of same colored pixels, rather than storing all the pixels individually, it would be more efficient to simply store one hex value and add a note specifying the shape and size of this block.
 
 Kolmogorov complexity takes this to the extreme, asking what is the smallest program that can reproduce some piece of data in full.
 In essence, how much actual "information" is contained within the data.
 
-A [Turing machine](https://en.wikipedia.org/wiki/Turing_machine) $$M$$ with input $$w$$ describes a string $$x$$ (generates that data) if $$\langle M, w \rangle$$ outputs $$x$$ ($$x$$ is left on the tape of the TM after halting).
+To formalize this idea, we need a model of general purpose computers—the [Turing machine](https://en.wikipedia.org/wiki/Turing_machine).
 
-The **Kolmogorov complexity** of $$x$$ is therefore the length of the smallest possible $$\langle M, w \rangle$$, called $$d(x)$$.
+A Turing machine $$M$$ with input $$w$$ describes a string $$x$$  if $$\langle M, w \rangle$$ outputs $$x$$ ($$x$$ is left on the tape of the TM after halting).
+
+The **Kolmogorov complexity** of $$x$$ is therefore the length $$K(x)$$ of the smallest possible $$\langle M, w \rangle$$ which outputs $$x$$, called $$d(x)$$.
 
 $$
 K(x) = |d(x)|
 $$
 
 First, we must deal with how to represent $$\langle M, w \rangle$$ as a binary string, such that we can measure it's size.
-Our encoding of $$\langle M, w \rangle$$ will be to simply $$w$$ appended to $$M$$. But to identify when $$w$$ starts, we need a prefix-free encoding. Our choice will be to double the bits of $$M$$, add a `01` separator, and then just concatenate $$w$$. This encoding works, although is not the shortest.
+
+$$M$$ and $$w$$ can each be trivially encoded on their own. But how do we encode them together?
+Our encoding of $$\langle M, w \rangle$$ will be to simply $$w$$ appended to $$M$$. But to identify when $$w$$ starts, we need a prefix-free encoding. Our choice will be to double the bits of $$M$$, add a `01` separator, and then just concatenate $$w$$. This encoding works, although is not the absolute shortest.
 
 $$
 \langle M, w \rangle = \text{DOUBLE}(M)01w
 $$
 
+(An easy way for a slightly better encoding is to double the length of $$M$$ rather than $$M$$ itself. This way a decoder can simply count the number of characters to know when $$w$$ starts, reducing our overhead from $$O(n)$$ to $$O(\log n)$$)
+
 Kolmogorov compression is therefore defined as $$f(x) = d(x) = \langle M, w \rangle$$
 
 ### Properties of Kolmogorov complexity
 
-> Although these kind of already make sense intuitively
+> Although some of these kind of already make sense intuitively
 
 **1\.** Kolmogorov complexity is at most the length of the string (plus a constant)
 
@@ -73,7 +77,9 @@ Better coefficients than 2 can be reached with better encodings than DOUBLE, but
 
 # $$K(x)$$ is not computable
 
-> If $$K(x)$$ were computable, then we could use that machine to make another machine which describes some strings $$x$$ in terms of its Kolmogorov complexity, which would be a shorter description than $$x$$ itself, giving rise to a contradiction.
+So the answer to the question in the title is...we can't never know?
+
+> Intuition: We can find a string $$x$$ that we are certain that has no minimal representation $$K(x) < n$$. If $$K(x)$$ were computable, then we could use that machine to make another machine which describes $$x$$ in terms of its Kolmogorov complexity, which would be a shorter description than $$n$$, giving rise to a contradiction.
 
 Suppose $$M_k$$ computes $$K(x)$$ for any string $$x$$.
 
@@ -103,8 +109,9 @@ At high enough values of $$c$$, this inequality is false. Therefore, $$M_k$$ can
 
 # Compressibility
 
-Ultimately, Kolmogorov complexity is a measure of the information content of a string $$x$$.
 Given a randomly generated string, we are pretty certain probabilistically that any given string cannot be compressed to be very small, i.e. most strings are quite incompressible.
+(If you generate a image by randomly setting pixels, in most cases you will get a picture of noise, and there is not much we can compress from noise)
+
 Yet mathematically, it is also impossible that $$K(x) > c$$ for any string $$x$$, i.e. there must be some string that is compressible.
 
 To define compressibility, define $$x$$ as $$c$$-compressible if 

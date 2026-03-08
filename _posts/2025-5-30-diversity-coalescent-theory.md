@@ -8,7 +8,7 @@ title: How much diversity is maintained in a neutral population?
 
 <p class="meta">{{ page.date | date: "%d %B %Y" }}</p>
 
-> Motivating question: under the neutral Wright-Fisher, a population loses diversity over time due to drift, but at what rate?
+> Motivating question: If a population does nothing but randomly select its genotypes from one generation to the next, it loses diversity over time due to drift, but at what rate?
 
 First of all, what is diversity? One measure is Heterozygosity $$H$$, referring to the probability two random alleles (at a single locus) are different in a population. Historically, heterozygosity has been an exclusively diploid concept, referring to when an individual carries two different alleles via separate chromosomes. Here it is a measure of "allelic diversity" that works for haploids as well. In the haploid case, it is akin to looking at $$\pi$$ for a single locus.
 

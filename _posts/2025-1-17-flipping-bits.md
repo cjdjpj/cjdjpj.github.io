@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Flipping bits
+title: How long to flip all the bits?
 ---
 
 {{ page.title }}

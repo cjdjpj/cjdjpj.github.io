@@ -26,9 +26,9 @@ Now consider the string `1010101`. We now need an extra conditional:
 ```python
 for i in range(7):
     if i % 2 == 0:
-        print("0", end="")
-    else:
         print("1", end="")
+    else:
+        print("0", end="")
 ```
 
 Clearly, there is this idea that the second string is more difficult to print, it is more complex, or contains more information.

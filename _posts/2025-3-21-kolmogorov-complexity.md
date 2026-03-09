@@ -9,10 +9,31 @@ title: What is the most concise representation of data?
 <p class="meta">{{ page.date | date: "%d %B %Y" }}</p>
 
 Many compression schemes work by finding patterns in the data which can be more concisely represented.
-For example, if an image has a large block of same colored pixels, rather than storing all the pixels individually, it would be more efficient to simply store one hex value and add a note specifying the shape and size of this block.
+For example, if an image has a large block of same colored pixels, rather than storing all the pixels individually, it would be more efficient to simply store one hex value and separately specify the shape and size of this block.
 
 Kolmogorov complexity takes this to the extreme, asking what is the smallest program that can reproduce some piece of data in full.
 In essence, how much actual "information" is contained within the data.
+
+Consider the string `1111111`. We can write this simple python program to print it:
+
+```python
+for i in range(7):
+    print("1", end="")
+```
+
+Now consider the string `1010101`. We now need an extra conditional:
+
+```python
+for i in range(7):
+    if i % 2 == 0:
+        print("0", end="")
+    else:
+        print("1", end="")
+```
+
+Clearly, there is this idea that the second string is more difficult to print, it is more complex, or contains more information.
+In this example, we are able to make this claim because the python program needed to print it has more lines of code.
+But surely there is a more universal metric we can use than "lines of code"?
 
 To formalize this idea, we need a model of general purpose computers—the [Turing machine](https://en.wikipedia.org/wiki/Turing_machine).
 
@@ -33,13 +54,13 @@ $$
 \langle M, w \rangle = \text{DOUBLE}(M)01w
 $$
 
-(An easy way for a slightly better encoding is to double the length of $$M$$ rather than $$M$$ itself. This way a decoder can simply count the number of characters to know when $$w$$ starts, reducing our overhead from $$O(n)$$ to $$O(\log n)$$)
+(An easy way for a slightly better encoding is append the length of $$M$$ at the start (and double it so we know when $$M$$ starts). This way a decoder can simply count the number of characters to know when $$w$$ starts, reducing our overhead from $$O(n)$$ to $$O(\log n)$$)
 
 Kolmogorov compression is therefore defined as $$f(x) = d(x) = \langle M, w \rangle$$
 
 ### Properties of Kolmogorov complexity
 
-> Although some of these kind of already make sense intuitively
+> Most of these are intuitively obvious, but it is nice to see that our formalization agrees with intuition
 
 **1\.** Kolmogorov complexity is at most the length of the string (plus a constant)
 
@@ -72,7 +93,7 @@ In fact, in general, any computable function of $$x$$ can be computed by a const
 
 **4\.** $$K(xy) \leq 2K(x) + K(y) + c$$
 
-A rather weak theorem, but the best bound because we need to DOUBLE the description of $$d(x)$$ in order to recognize when the description for $$y$$ begins.
+A rather weak theorem, but the best bound because we need to DOUBLE the description of $$d(x)$$ in order to know when $$y$$ begins.
 Better coefficients than 2 can be reached with better encodings than DOUBLE, but can never be 1, we need more than a constant amount of data to separate TM and input string.
 
 # $$K(x)$$ is not computable
@@ -105,7 +126,7 @@ $$
 n \leq K(x) \leq \lceil \lg (n+1) \rceil + c
 $$
 
-At high enough values of $$c$$, this inequality is false. Therefore, $$M_k$$ cannot exist and $$K(x)$$ cannot  be computable.
+At high enough values of $$n$$, this inequality is false. Therefore, $$M_k$$ cannot exist and $$K(x)$$ cannot  be computable.
 
 # Compressibility
 

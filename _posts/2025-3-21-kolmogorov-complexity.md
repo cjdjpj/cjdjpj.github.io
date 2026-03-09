@@ -77,7 +77,7 @@ Better coefficients than 2 can be reached with better encodings than DOUBLE, but
 
 # $$K(x)$$ is not computable
 
-So the answer to the question in the title is...we can't never know?
+So the answer to the question in the title is...we don't know?
 
 > Intuition: We can find a string $$x$$ that we are certain that has no minimal representation $$K(x) < n$$. If $$K(x)$$ were computable, then we could use that machine to make another machine which describes $$x$$ in terms of its Kolmogorov complexity, which would be a shorter description than $$n$$, giving rise to a contradiction.
 

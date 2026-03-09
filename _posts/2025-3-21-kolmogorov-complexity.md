@@ -1,6 +1,6 @@
 ---
 layout: post
-title: What is the minimal representation of data?
+title: What is the most concise representation of data?
 ---
 
 {{ page.title }}

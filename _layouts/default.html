@@ -33,7 +33,8 @@
         <div class="site">
             <div class="title">
                 <a href="/">CJ Jiang</a>
-                <a class="extra" href="/posts">posts</a>
+                <a class="extra {% if page.url contains '/posts' %}active{% endif %}" href="/posts">posts</a>
+                <a class="extra {% if page.url contains '/photos' %}active{% endif %}" href="/photos">photos</a>
             </div>
 
             {{ content }}

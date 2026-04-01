@@ -31,7 +31,10 @@ a {
     text-decoration: none;
 }
 a:hover {
-    color: black;
+    color: #fabd2f;
+}
+a:visited:hover {
+    color: #fabd2f;
 }
 a:visited {
     color: #a0a;
@@ -94,13 +97,16 @@ ul.posts span {
     color: #a00;
 }
 .title a:hover {
-    color: black;
+    color: #fabd2f;
 }
 .title a.extra {
     color: #aaa;
     margin-left: 1em;
 }
 .title a.extra:hover {
+    color: #fabd2f;
+}
+.title a.extra.active {
     color: black;
 }
 .site .meta {
@@ -215,3 +221,30 @@ hr {
         line-height: 1.4em; /* Slightly tighter line spacing */
     }
 }
+
+/*****************************************************************************/
+/* Photos */
+/*****************************************************************************/
+.photo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    padding: 8px;
+}
+
+.photo-item {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+}
+
+.photo-item.landscape {
+    grid-column: span 2;
+    aspect-ratio: 4 / 3;
+}
+
+.photo-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+

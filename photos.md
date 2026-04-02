@@ -12,8 +12,7 @@ photos:
   - id: NO_FUSION_LIVE_0104_086_zx2n9t
   - id: NO_FUSION_1226_044_ofixmj
   - id: NO_FUSION_1227_016_czpkfu
-  - id: NO_FUSION_LIVE_0104_063_i1qth2
-  - id: NO_FUSION_1227_010_irhvmf
+  - id: NO_FUSION_LIVE_0104_063_mvdvuy
   - id: NO_FUSION_1227_004_etlkuk
   - id: NO_FUSION_1226_063_jtuy4w
   - id: NO_FUSION_1226_064_r1alvd
@@ -35,6 +34,7 @@ photos:
   - id: NO_FUSION_0109_048_nsmu3l
   - id: NO_FUSION_1217_061_rb0zfy
   - id: NO_FUSION_0108_012_bysfuq
+  - id: NO_FUSION_0105_003_fhrr5q
   - id: NO_FUSION_0109_043_x26amk
   - id: NO_FUSION_1217_031_j0att2
   - id: NO_FUSION_0224_003_chjicw
@@ -44,7 +44,5 @@ photos:
   - id: NO_FUSION_0104_107_cmtpo2
   - id: NO_FUSION_0105_047_hrrbni
   - id: NO_FUSION_0104_015_qtyiek
-  - id: NO_FUSION_0105_003_pomewt
   - id: NO_FUSION_0104_019_wt4mlb
-  - id: NO_FUSION_1217_035_jxfolb
 ---

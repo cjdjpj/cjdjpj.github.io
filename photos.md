@@ -35,10 +35,10 @@ photos:
   - id: NO_FUSION_1217_061_rb0zfy
   - id: NO_FUSION_0108_012_bysfuq
   - id: NO_FUSION_0105_003_fhrr5q
-  - id: NO_FUSION_0109_043_x26amk
+  # - id: NO_FUSION_0109_043_x26amk
   - id: NO_FUSION_1217_031_j0att2
   - id: NO_FUSION_0224_003_chjicw
-  - id: NO_FUSION_0109_031_xirh2v
+  # - id: NO_FUSION_0109_031_xirh2v
   - id: NO_FUSION_0108_033_gwup0r
   - id: NO_FUSION_0105_006_t3ygy3
   - id: NO_FUSION_0104_107_cmtpo2

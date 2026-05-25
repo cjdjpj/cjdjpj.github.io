@@ -2,21 +2,23 @@
 layout: default
 ---
 
+{% assign cdn = "https://res.cloudinary.com/dbfwxtk7g/image/upload" %}
+
 <div class="photo-grid">
     {% for photo in page.photos %}
     <div class="photo-item">
         <img
-            src="https://res.cloudinary.com/dbfwxtk7g/image/upload/f_auto,q_auto,w_800,dpr_auto/{{ photo.id }}"
+            src="{{ cdn }}/f_auto,q_auto,w_800,dpr_auto/{{ photo.id }}"
             srcset="
-            https://res.cloudinary.com/dbfwxtk7g/image/upload/f_auto,q_auto,w_400/{{ photo.id }} 400w,
-            https://res.cloudinary.com/dbfwxtk7g/image/upload/f_auto,q_auto,w_800/{{ photo.id }} 800w,
-            https://res.cloudinary.com/dbfwxtk7g/image/upload/f_auto,q_auto,w_1600/{{ photo.id }} 1600w
+                {{ cdn }}/f_auto,q_auto,w_400/{{ photo.id }} 400w,
+                {{ cdn }}/f_auto,q_auto,w_800/{{ photo.id }} 800w,
+                {{ cdn }}/f_auto,q_auto,w_1600/{{ photo.id }} 1600w
             "
-            sizes="(max-width: 600px) 50vw, 800px"
+            sizes="(max-width: 600px) 50vw, 33vw"
             alt="{{ photo.alt }}"
             loading="lazy"
             class="expandable"
-            data-full="https://res.cloudinary.com/dbfwxtk7g/image/upload/f_auto,q_auto,w_2400/{{ photo.id }}"
+            data-full="{{ cdn }}/f_auto,q_auto,w_2400/{{ photo.id }}"
             data-alt="{{ photo.alt }}"
         >
         {% if photo.caption %}
@@ -24,6 +26,10 @@ layout: default
         {% endif %}
     </div>
     {% endfor %}
+</div>
+
+<div class="refresh-wrap">
+    <button id="refresh-btn">refresh</button>
 </div>
 
 <div id="lightbox" aria-modal="true" role="dialog" aria-label="Expanded image">
@@ -35,7 +41,23 @@ layout: default
 .expandable {
     cursor: zoom-in;
 }
-
+.refresh-wrap {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+#refresh-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #d65d0e;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+#refresh-btn:hover {
+    opacity: 1;
+}
 #lightbox {
     display: none;
     position: fixed;
@@ -80,29 +102,44 @@ const lightbox    = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn    = document.getElementById('lightbox-close');
 
-document.querySelectorAll('img.expandable').forEach(img => {
-    img.addEventListener('click', () => {
-        lightboxImg.src = img.dataset.full;
-        lightboxImg.alt = img.dataset.alt;
-        lightbox.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    });
-    img.addEventListener('load', () => {
-        if (img.naturalWidth > img.naturalHeight) {
-            img.closest('.photo-item').classList.add('landscape');
-        }
-    });
-    if (img.complete && img.naturalWidth > img.naturalHeight) {
+function checkLandscape(img) {
+    if (img.naturalWidth > 0 && img.naturalWidth > img.naturalHeight) {
         img.closest('.photo-item').classList.add('landscape');
     }
-});
+}
+
+function showRandomPhotos() {
+    const items = [...document.querySelectorAll('.photo-item')];
+    items.forEach(item => item.style.display = 'none');
+    items.sort(() => Math.random() - 0.5);
+    items.slice(0, 4).forEach(item => item.style.display = '');
+}
+
+function initExpandListeners() {
+    document.querySelectorAll('img.expandable').forEach(img => {
+        img.addEventListener('click', () => {
+            lightboxImg.src = img.dataset.full;
+            lightboxImg.alt = img.dataset.alt;
+            lightbox.classList.add('active');
+            document.body.style.overflow = 'hidden';
+            closeBtn.focus();
+        });
+
+        img.addEventListener('load', () => checkLandscape(img));
+        if (img.complete) checkLandscape(img);
+    });
+}
 
 function closeLightbox() {
     lightbox.classList.remove('active');
-    lightboxImg.src = '';
+    lightboxImg.removeAttribute('src');
     document.body.style.overflow = '';
 }
 
+showRandomPhotos();
+initExpandListeners();
+
+document.getElementById('refresh-btn').addEventListener('click', showRandomPhotos);
 closeBtn.addEventListener('click', closeLightbox);
 
 lightbox.addEventListener('click', e => {
@@ -110,6 +147,12 @@ lightbox.addEventListener('click', e => {
 });
 
 document.addEventListener('keydown', e => {
-    if (e.key === 'Escape') closeLightbox();
+    if (lightbox.classList.contains('active')) {
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'Tab') {
+            e.preventDefault();
+            closeBtn.focus();
+        }
+    }
 });
 </script>

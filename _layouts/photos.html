@@ -102,6 +102,8 @@ const lightbox    = document.getElementById('lightbox');
 const lightboxImg = document.getElementById('lightbox-img');
 const closeBtn    = document.getElementById('lightbox-close');
 
+let remainingPool = [];
+
 function checkLandscape(img) {
     if (img.naturalWidth > 0 && img.naturalWidth > img.naturalHeight) {
         img.closest('.photo-item').classList.add('landscape');
@@ -110,9 +112,13 @@ function checkLandscape(img) {
 
 function showRandomPhotos() {
     const items = [...document.querySelectorAll('.photo-item')];
+
+    if (remainingPool.length < 4) {
+        remainingPool = [...items].sort(() => Math.random() - 0.5);
+    }
+
     items.forEach(item => item.style.display = 'none');
-    items.sort(() => Math.random() - 0.5);
-    items.slice(0, 4).forEach(item => item.style.display = '');
+    remainingPool.splice(0, 4).forEach(item => item.style.display = '');
 }
 
 function initExpandListeners() {

@@ -6,7 +6,6 @@ photos:
   - id: NO_FUSION_0519_080_erwilc
   - id: NO_FUSION_LIVE_0519_018_wigas0
   - id: NO_FUSION_LIVE_0525_050_sho85v
-  - id: NO_FUSION_0516_002_dbmtkt
   - id: NO_FUSION_0513_070_lkqgwn
   - id: NO_FUSION_LIVE_0525_041_alvub2
   - id: NO_FUSION_LIVE_0525_016_z81jyu
@@ -68,4 +67,9 @@ photos:
   - id: NO_FUSION_0528_046_vj2sn5
   - id: NO_FUSION_0601_040_afwyzi
   - id: NO_FUSION_0109_048_rnsfju
+  - id: NO_FUSION_0521_010_hjn3wh
+  - id: NO_FUSION_0627_006_kf4piv
+  - id: NO_FUSION_0718_006_oix0pu
+  - id: NO_FUSION_0706_009_xjuuic
+  - id: NO_FUSION_LIVE_0626_023_mtvibk
 ---

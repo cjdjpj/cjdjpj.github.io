@@ -3,12 +3,9 @@ layout: photos
 title: Photos
 permalink: /photos/
 photos:
-  - id: NO_FUSION_0519_080_erwilc
-  - id: NO_FUSION_LIVE_0519_018_wigas0
   - id: NO_FUSION_LIVE_0525_050_sho85v
   - id: NO_FUSION_0513_070_lkqgwn
   - id: NO_FUSION_LIVE_0525_041_alvub2
-  - id: NO_FUSION_LIVE_0525_016_z81jyu
   - id: NO_FUSION_LIVE_0223_020_fx0nzv
   - id: NO_FUSION_LIVE_0307_006_eztluu
   - id: NO_FUSION_LIVE_0104_088_out9kq
@@ -34,9 +31,7 @@ photos:
   - id: NO_FUSION_1218_046_xt4oze
   - id: NO_FUSION_1218_016_wxiznk
   - id: NO_FUSION_1218_017_x0jb15
-  - id: NO_FUSION_1218_012_ajtxna
   - id: NO_FUSION_1217_061_rcosol
-  - id: NO_FUSION_1217_073_zne2f5
   - id: NO_FUSION_0527_119_a8lsi0
   - id: NO_FUSION_1218_008_h2pbom
   - id: NO_FUSION_1217_035_bljhqz

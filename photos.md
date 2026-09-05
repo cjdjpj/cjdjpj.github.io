@@ -67,4 +67,10 @@ photos:
   - id: NO_FUSION_0718_006_oix0pu
   - id: NO_FUSION_0706_009_xjuuic
   - id: NO_FUSION_LIVE_0626_023_mtvibk
+  - id: NO_FUSION_0823_013_phyai6
+  - id: NO_FUSION_0816_003_otew7b
+  - id: NO_FUSION_LIVE_0131_045_ye7wjh
+  - id: NO_FUSION_0829_118_vgiqil
+  - id: NO_FUSION_0829_069_tpzzgb
+  - id: NO_FUSION_0829_063_umig9x
 ---
